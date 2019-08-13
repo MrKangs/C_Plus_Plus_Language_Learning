@@ -1,0 +1,10 @@
+1. Go to VS 2019 
+2. Select Create a New Project
+3. Choose Windows Desktop Wizard
+4. Enter the file name and select create
+5. Make sure it is Console Application (.exe) and Precompiled header off
+6. In the Solution Explorer, right click the project name
+7. Go to properties
+8. In C++ menu, select Language and say Yes on Disavle Language Extensions
+9. In C++ memu, select General and say Level 4 for Warning Level and Yes for Treat Warning As Errors
+10. You are Set
