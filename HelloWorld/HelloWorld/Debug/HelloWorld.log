@@ -1,2 +1,9 @@
 ﻿  HelloWorld.cpp
+C:\Users\Kenneth\source\repos\HelloWorld\HelloWorld\HelloWorld.cpp(14,6): warning C4101:  'a': unreferenced local variable
+C:\Users\Kenneth\source\repos\HelloWorld\HelloWorld\HelloWorld.cpp(14,9): warning C4101:  'b': unreferenced local variable
+C:\Users\Kenneth\source\repos\HelloWorld\HelloWorld\HelloWorld.cpp(22,6): warning C4101:  'cb': unreferenced local variable
+C:\Users\Kenneth\source\repos\HelloWorld\HelloWorld\HelloWorld.cpp(21,6): warning C4101:  'ab': unreferenced local variable
+C:\Users\Kenneth\source\repos\HelloWorld\HelloWorld\HelloWorld.cpp(15,9): warning C4101:  'c': unreferenced local variable
+C:\Users\Kenneth\source\repos\HelloWorld\HelloWorld\HelloWorld.cpp(13,6): warning C4101:  'x': unreferenced local variable
+C:\Users\Kenneth\source\repos\HelloWorld\HelloWorld\HelloWorld.cpp(15,16): warning C4101:  'd': unreferenced local variable
   HelloWorld.vcxproj -> C:\Users\Kenneth\source\repos\HelloWorld\Debug\HelloWorld.exe
