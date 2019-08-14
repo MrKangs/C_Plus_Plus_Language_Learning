@@ -87,7 +87,33 @@ int main() {
 	std::cout << x; 
 
 	//------------------------------------------------------------------------------------------------------------------------------------------
-	// chapter 1.7:
+	// chapter 1.7: variable naming 
+	/*
+
+	int value; // correct
+	int Value; // incorrect (should start with lower case letter)
+	int VALUE; // incorrect (should start with lower case letter)
+
+	int my_variable_name; // correct (separated by underscores)
+	int my_function_name(); // correct (separated by underscores)
+
+	int myVariableName; // correct (intercapped/CamelCase)
+	int myFunctionName(); // correct (intercapped/CamelCase)
+
+	int my variable name; // invalid (whitespace not allowed)
+	int my function name(); // invalid (whitespace not allowed)
+
+	int MyVariableName; // valid but incorrect (should start with lower case letter)
+	int MyFunctionName(); // valid but incorrect (should start with lower case letter)
+
+	Make sure the name of the variable are not wired or lack of explaination! 
+	However, if it too long to explain what that means, then just use fricking comments
+	*/
+
+	//------------------------------------------------------------------------------------------------------------------------------------------
+	// chapter 1.8: https://mommoo.tistory.com/14 
+
+
 
 
 
