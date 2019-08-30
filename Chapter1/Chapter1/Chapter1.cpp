@@ -135,21 +135,7 @@ int main() {
 	//------------------------------------------------------------------------------------------------------------------------------------------
 	// chapter 1.10: Making the first program in C++
 	// Please look at the file called doubleTheNumber.cpp
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	// Also look at the file called addAndSubtractTwoInteger.cpp
 
 	return 0;									
 												/* When an executable program finishes running, the program sends a value back to the operating 
