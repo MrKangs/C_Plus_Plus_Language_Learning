@@ -1,9 +1,10 @@
 #include <iostream>
 
-void doNothing(const int &x) { //Some random function that we will looked at this later chapter 
-	/*	This function does basically nothing!
-		Look at chapter 1.6 to know what we have this random function in this program.*/
+void doNothing(const int& x) 
+//Some random function that we will looked at this later chapter 
+/*	This function does basically nothing. Look at chapter 1.6 to know what we have this random function in this program.*/
 
+{
 }
 int main() {
 	//------------------------------------------------------------------------------------------------------------------------------------------
@@ -81,8 +82,8 @@ int main() {
 	// chapter 1.6: Avoid uninitialized variable in programming 
 	int x;
 	
-	//doNothing(x);				// You will get an error that a is not uninitialized: it never got any data. Now add line 84
-								// it will work. (with an error, but it works) ( but it should not have work!!!!!!
+	doNothing(x);				// You will get an error that a is not uninitialized: it never got any data. Now add line 84
+								// it will work. (with an error, but it works) but it should not have work!!!!!!
 
 	std::cout << x; 
 
@@ -111,11 +112,29 @@ int main() {
 	*/
 
 	//------------------------------------------------------------------------------------------------------------------------------------------
-	// chapter 1.8: https://mommoo.tistory.com/14 
+	// chapter 1.8: literals and operators 
+	// int g = 5; Explaination: g is an constant while 5 is a literal 
+	// 2 + 6 = 8; Explaination: 2 and 6 are literals while + and = are operators.
+	// = are not the same as ==: = means is (or assigned as) while == means equal for comparison
+	// (<<) means insection, (>>) means extraction
+	// Go to this website for types of operators: https://www.learncpp.com/cpp-tutorial/introduction-to-literals-and-operators/
 
+	//------------------------------------------------------------------------------------------------------------------------------------------
+	// chapter 1.9: Statment Vs. Expression
+										// Statements are used when we want the program to perform an action. 
+										// Expressions are used when we want the program to calculate a value.
+	int g;								// this is an statement
+	g = 5;								// this is an expression
+	std::cout << g;						// this is an expression statement: The entire line is an statement,but there is operators 
+										// that makes the line also an expression
 
+	int s{ 2 + 3 };						// this is an statemetn with an expression: type identifier { expression };
+										// Statements are used when we want the program to perform an action. 
+										// Expressions are used when we want the program to calculate a value.
 
-
+	//------------------------------------------------------------------------------------------------------------------------------------------
+	// chapter 1.10: Making the first program in C++
+	// Please look at the file called doubleTheNumber.cpp
 
 
 
