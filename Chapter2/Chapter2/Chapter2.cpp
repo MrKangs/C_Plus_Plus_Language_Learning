@@ -26,6 +26,28 @@ int returnUserInputInteger() {				// Chapter 2.2 Use. Function that ask the user
 	std::cin >> x;
 	return x;
 }
+
+int add(int x, int y) {						// Chapter 2.3 Use. Adding two numbers
+	return x + y;
+}
+
+int mutiply(int x, int y) {					// Chapter 2.3 Use. Mutiplying two numbers
+	return x * y;
+}
+
+int subtraction(int x, int y) {				// Chapter 2.3 Use. Subtracting two numbers (x - y)
+	return x - y;
+}
+
+int addThree(int x, int y, int z) {			// Chapter 2.3 Use. Adding three numbers
+	return x + y + z;
+}
+
+
+
+
+
+
 int main()
 {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -113,7 +135,95 @@ type return(){								// type can be any type such as string, int, char, etc.
 											// we can fix it in returnUserInputIngeter()
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Chapter 2.3: 
+// Chapter 2.3: Arguments and Parameters in Functions
+
+	// A function parameter is a variable used in a function. Function parameters work almost identically to variables defined inside 
+	// the function, but with one difference: they are always initialized with a value provided by the caller of the function.
+	
+	/*
+	// This function takes no parameters
+	// It does not rely on the caller for anything
+	void doPrint(){
+		std::cout << "In doPrint()" << '\n';
+	}
+ 
+	// This function takes one integer parameter named x
+	// The caller will supply the value of x
+	void printValue(int x){
+		std::cout << x  << '\n';
+	}
+ 
+	// This function has two integer parameters, one named x, and one named y
+	// The caller will supply the value of both x and y
+	int add(int x, int y){
+		return x + y;
+	}
+
+	// And when you want them to use in the main function, you need to enter like this below
+	// doPrint(); --> In doPrint() will print out
+	// printValue(4); --> 4 will print out
+	// add(5,6); --> it will return a value of 11, but not be printed
+
+	// parameters are the function type input, and arguments are the actual data input
+	// for example in printValue(int x), int x part will be parameter while in printValue(4), the 4 will be the argument
+	*/
+
+	// Go look at doubleTheNumberReRenewVersion.cpp as an example
+
+	std::cout << add(3, 5) << '\n';													// = 8
+	std::cout << addThree(1 + 2, 5 * 4, 5 - 9) << '\n';								// = 19
+
+	int a{ 5 };
+	std::cout << add(a, a) << '\n';													// = 10
+	std::cout << addThree(add(a, 2), mutiply(4, 2), subtraction(6, 9)) << '\n';		// = 12 
+
+	// All of these statments are okay to use
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 2.4: Introduction to local scope
+	// local scope is the same concept of local variable: it doesn't change the global variable.
+	// We already explain this concept in doubleTheNumberRenewVersion.cpp
+	// The main key is that don't get confused with the same name variable in different functions: make all the variable name different!
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 2.5: Why the heck we need to use functions?
+
+	/* We might say that we can just write the whole thing in one big program called the main().
+	   But, actually writing them in small functions are easy to fix, modify, and lighter to use than that.
+	   Also, the program will run faster than having a huge long program(not sure in C++ but in other language yse it is)
+	   So, we need to use them. They are nice, neat, and easy to do.*/
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 2.6: WhiteSpace in writing code.
+
+	//std::cout << "Hello
+		//world!"; // Not allowed!
+
+	std::cout << "Hello "
+		"world!"; // prints "Hello world!", but don't do this! looks disgusting!
+
+	// Make sure, when you write the code, make it easy to read, and basic stuff that should not be looked funky.
+	// Look at this website for further explaination --> https://www.learncpp.com/cpp-tutorial/whitespace-and-basic-formatting/
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 2.7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 	return 0;
 }
