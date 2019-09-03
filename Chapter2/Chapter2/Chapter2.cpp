@@ -8,6 +8,7 @@ void doPrint() {
 void doB() {								// Chapter 2.1 Use. Mutiple layer of functions to execute
 	std::cout << "In doB()\n";				// Note: Make sure you start with the smaller function, because the smaller one needs to be 
 											// defined first than the bigger one. In this case: doB() < doA() < main()
+											// Ignore the message above, go to chapter 2.7 to get information why
 }
 
 void doA() {
@@ -44,7 +45,7 @@ int addThree(int x, int y, int z) {			// Chapter 2.3 Use. Adding three numbers
 }
 
 
-
+int division(int x, int y);					// Chapter 2.7 Use. Forward Declaration: this statement is called function prototype 
 
 
 
@@ -200,17 +201,26 @@ type return(){								// type can be any type such as string, int, char, etc.
 		//world!"; // Not allowed!
 
 	std::cout << "Hello "
-		"world!"; // prints "Hello world!", but don't do this! looks disgusting!
+		"world!" << '\n'; // prints "Hello world!", but don't do this! looks disgusting!
 
 	// Make sure, when you write the code, make it easy to read, and basic stuff that should not be looked funky.
 	// Look at this website for further explaination --> https://www.learncpp.com/cpp-tutorial/whitespace-and-basic-formatting/
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Chapter 2.7
+// Chapter 2.7: Forward declarations
+	// For every previous chapters, we always defined the function before the main function. 
+	// And look at my commit in the very top. It will tell you it won't work, but now it will
+	// How? we use the tool of forward declaration.
 
+	// Look below, we will define a new function after the main() called division function
+	// now look at line 48, that is how to do forward declaration. just type the function statment before the main function
+	
+	std::cout << division(6, 2);				// Now it should work: it will give 3
 
+	// Now we can write all the functions below the main function and do forward declaration before the main function. That is Nice!
 
-
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 2.8
 
 
 
@@ -228,3 +238,6 @@ type return(){								// type can be any type such as string, int, char, etc.
 	return 0;
 }
 
+int division(int x, int y) {				// Chapter 2.7 Use. divide two number and gives the results as an integer, no decimal or remander
+	return x / y;
+}
