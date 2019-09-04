@@ -47,7 +47,9 @@ int addThree(int x, int y, int z) {			// Chapter 2.3 Use. Adding three numbers
 
 int division(int x, int y);					// Chapter 2.7 Use. Forward Declaration: this statement is called function prototype 
 
+int remander(int x, int y);
 
+using namespace std;						// Chapter 2.9 Use. Namespace for Std (Standard Library)
 
 int main()
 {
@@ -215,23 +217,35 @@ type return(){								// type can be any type such as string, int, char, etc.
 	// Look below, we will define a new function after the main() called division function
 	// now look at line 48, that is how to do forward declaration. just type the function statment before the main function
 	
-	std::cout << division(6, 2);				// Now it should work: it will give 3
+	std::cout << division(6, 2) << '\n';				// Now it should work: it will give 3
 
 	// Now we can write all the functions below the main function and do forward declaration before the main function. That is Nice!
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Chapter 2.8
+// Chapter 2.8: Programs with multiple code files
+
+// Look at this website how to add file in the same project: https://www.learncpp.com/cpp-tutorial/programs-with-multiple-code-files/
+// Adding file references are easy compare to other programming languages. 
+// It is the same as Forward declaration: just write the function name before the main function.
+
+std::cout << remander(6, 4) << '\n';			// = 2
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 2.9: Naming conflicts and the std namespace
+
+// If two identical identifiers are introduced into the same program in a way that the compiler or linker can¡¯t tell them apart, 
+// the compiler or linker will produce an error. This error is generally referred to as a naming collision (or naming conflict).
+
+// To make sure, please read over the code before you run it.
+
+// You have noticed that we have been using std:: many many times. We can actually reduce it. 
+// simpily write using namespace std; before the main function will do it. Look at line 53 and line 243
 
 
+cout << "Hello World!" << '\n';				// It will run with no error
 
-
-
-
-
-
-
-
-
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 2.10
 
 
 	
