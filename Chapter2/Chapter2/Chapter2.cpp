@@ -51,6 +51,8 @@ int remander(int x, int y);
 
 using namespace std;						// Chapter 2.9 Use. Namespace for Std (Standard Library)
 
+#define MY_NAME "Kenneth"					// Chapter 2.10 Use. 
+
 int main()
 {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -245,10 +247,35 @@ std::cout << remander(6, 4) << '\n';			// = 2
 cout << "Hello World!" << '\n';				// It will run with no error
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Chapter 2.10
+// Chapter 2.10: Introduction to the preprocessor --> Referenece: https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/
+
+// The preprocessor is best thought of as a separate program that manipulates the text in each code file.
+
+// When the preprocessor runs, it scans through the code file(from top to bottom), looking for preprocessor directives.
+// Preprocessor directives(often just called directives) are instructions that start with a # symboland end with a newline(NOT a semicolon).
+// These directives tell the preprocessor to perform specific particular text manipulation tasks.
+// Note that the preprocessor does not understand C++ syntax 
+// instead, the directives have their own syntax(which in some cases resembles C++ syntax, and in other cases, not so much).
+// The output of the preprocessor goes through several more translation phases, 
+// and then is compiled.Note that the preprocessor does not modify the original code files in any way -- 
+// rather, all text changes made by the preprocessor happen temporarily in - memory each time the code file is compiled.
+
+// There are several directives types in C++ : include, object-like macros, function-like macros, and ifs. 
+
+// Object-like macros has two types of directives: with subtitiles or without it
+// #define MY_NAME "Kenneth" will be a with subsitution text
+// #define MY_NAME will be a without subsitution text
+
+// For the with subtitles it could be used like the following
+
+	std::cout << MY_NAME;						// Look at line 54, the output will be Kenneth
+
+// Then you might ask, why the heck we use this thing. Because it is one way to seperate code easily without using functions.
+
+// What is an example for without subsitution text, well it used with the if directives.
 
 
-	
+
 	return 0;
 }
 
