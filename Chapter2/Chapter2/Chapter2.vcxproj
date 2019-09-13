@@ -153,6 +153,12 @@
   <ItemGroup>
     <ClCompile Include="Chapter2.cpp" />
     <ClCompile Include="remander.cpp" />
+    <ClCompile Include="square.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="geometry.h" />
+    <ClInclude Include="remander.h" />
+    <ClInclude Include="square.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

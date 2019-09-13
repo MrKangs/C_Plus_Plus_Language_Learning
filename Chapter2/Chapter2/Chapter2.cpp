@@ -2,7 +2,7 @@
 
 #include <iostream>
 void doPrint() {
-	std::cout << "In doPrint()\n";			// Chapter 2.1 use. Printing how the main and other functions works in C++
+	std::cout << "In doPrint()\n";			// Chapter 2.1 Use. Printing how the main and other functions works in C++
 }
 
 void doB() {								// Chapter 2.1 Use. Mutiple layer of functions to execute
@@ -11,7 +11,7 @@ void doB() {								// Chapter 2.1 Use. Mutiple layer of functions to execute
 											// Ignore the message above, go to chapter 2.7 to get information why
 }
 
-void doA() {
+void doA() {								// Chapter 2.1 Use.
 	std::cout << "Starting doA()\n";
 	doB();
 	std::cout << "Ending doA()\n";
@@ -47,11 +47,18 @@ int addThree(int x, int y, int z) {			// Chapter 2.3 Use. Adding three numbers
 
 int division(int x, int y);					// Chapter 2.7 Use. Forward Declaration: this statement is called function prototype 
 
-int remander(int x, int y);
+//int remander(int x, int y);				// Chapter 2.7 Use. Forward Declaration in different file of fuunction
+											// Currently commented because of Chapter 2.11 & 2.12, remove the comment to work
 
 using namespace std;						// Chapter 2.9 Use. Namespace for Std (Standard Library)
 
-#define MY_NAME "Kenneth"					// Chapter 2.10 Use. 
+#define MY_NAME "Kenneth"					// Chapter 2.10 Use. This is directives with substitution
+
+#define IFSTATEMENT							// Chapter 2.10 Use. This is directives without substitution
+
+void foo();									// Chapter 2.10 Use. This is forward declaration
+
+#include "remander.h"						// Chapter 2.11 & 2.12 Use. Adding the entire program file in the main function
 
 int main()
 {
@@ -219,7 +226,7 @@ type return(){								// type can be any type such as string, int, char, etc.
 	// Look below, we will define a new function after the main() called division function
 	// now look at line 48, that is how to do forward declaration. just type the function statment before the main function
 	
-	std::cout << division(6, 2) << '\n';				// Now it should work: it will give 3
+	std::cout << "division function results: " << division(6, 2) << '\n';				// Now it should work: it will give 3
 
 	// Now we can write all the functions below the main function and do forward declaration before the main function. That is Nice!
 
@@ -230,7 +237,7 @@ type return(){								// type can be any type such as string, int, char, etc.
 // Adding file references are easy compare to other programming languages. 
 // It is the same as Forward declaration: just write the function name before the main function.
 
-std::cout << remander(6, 4) << '\n';			// = 2
+std::cout << "remander function/program results: " << remander(6, 4) << '\n';			// = 2
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 2.9: Naming conflicts and the std namespace
@@ -274,11 +281,100 @@ cout << "Hello World!" << '\n';				// It will run with no error
 
 // What is an example for without subsitution text, well it used with the if directives.
 
+#ifdef IFSTATEMENT								// if IFSTATEMENT is defined 
+	std::cout << "If statements work" << '\n';	// it will print out this statement
+#endif											// this will end the if statment (I hope there is a better writing if statement)
 
+#ifdef MY_NAME
+	std::cout << "My name is out:" << MY_NAME << '\n';
+#endif
+
+#ifdef ELSESTATEMENT											// There is no such ELSESTATEMENT defined, it will be ignored
+	std : cout << "This is wrong, should not be printed";		// Therefore, this statement will not prinited
+#endif
+
+#ifndef IFSTATEMENT												// This an if not statment. 
+	std::cout << "This is wrong, should not be printed";		// Since IFSTATEMENT exsits, it will not print the message
+#endif // !IFSTATEMENT
+
+#ifndef IFNOTSTATEMENT											// The opposite of the above statments
+	std::cout << "If not statement is working" << '\n';
+#endif // !ELSESTATEMENT
+
+#if 0
+	std::cout << "This will not be printed, so we can do anything from here even though it has error";
+	Hey This is invalid text to do but we can do anything we want LOL.
+		It is similar to a comment, but not useless for just commmet, for adding functions or debugging will be useful for this
+#endif
+
+		// Now look at the following example
+
+#define Ken 9													// This tells that Ken is defined and the value is 9		
+
+#ifdef Ken														// This directives only care whether Ken is defined or not
+		std::cout << "Ken variable is " << Ken << '\n';			// This statement will now be replace as 9 as the Ken spot
+#endif														
+
+	foo();														// We run the program foo first, look at end of the main function 
+
+#ifdef HELLO													// Since the function contains the #define HELLO it should pass
+	std::cout << "HELLO";										// But it doesn't. Because directives runs first than the C++, and
+#endif															// two of those functions are separate that reads differently
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 2.11: Header files: https://www.learncpp.com/cpp-tutorial/header-files/
+// It is annoying when you need to call every function from every different file. 
+// Therefore, we use a header to tell that we are using this entire program for this main function
+
+// Look at line 60 to see how to declare the whole additional program (it will be combined with Chapter 2.12 Header Guard) 
+// Use angled brackets to include header files that come with the compiler. Use double quotes to include any other header files.
+// When you write a program, write the headers or #include in this order: your own user-defined headers first, 
+// then 3rd party library headers, then standard library headers, with the headers in each section sorted alphabetically.
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 2.12: Header guard
+// In any programming language, you can't have two same function name at all. Also you should not define the same function twice
+// For example, I can't define foo() again since I already defined one. 
+// Now let's look an example at sqaure.h and geometry.h and main function file
+
+#include "square.h"
+#include "geometry.h"
+
+// If you run this with removing the comments above, you will get an error
+// because you basically called getSquareSide function twice (since geometry.h is basically calling square.h function )
+
+// As you see above, it is hard to tell whether you used the same function twice, therefore, we use a header guard to prevent this issue
+
+// The format will be like this below
+
+//#ifndef SOME_UNIQUE_NAME_HERE
+//#define SOME_UNIQUE_NAME_HERE
+
+// your declarations (and certain types of definitions) here
+
+//#endif
+
+// So go back to the example we had before with a new file called square.cpp
+
+	std::cout << "a square has " << getSquareSides() << "sides\n";									// = 4
+	std::cout << "a square of length 5 has perimeter length " << getSquarePerimeter(5) << '\n';		// = 20
+// As you see, there is no error when you include geometry.h and sqaure.h files
+// header guard is only used in header files not in scoure files. Please take a look at sqaure.h to know the function of a header
+
+// When you make a new header file, VS automatically write #pragma once which is also a header guard. 
+// It works the same as the long header guard, but some programs doesn't support that feature. Therefore still use header guard
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// chapter 2.13: making the first program ever: https://www.learncpp.com/cpp-tutorial/how-to-design-your-first-programs/
 
 	return 0;
 }
 
 int division(int x, int y) {				// Chapter 2.7 Use. divide two number and gives the results as an integer, no decimal or remander
 	return x / y;
+}
+
+void foo() {
+#define HELLO
 }
