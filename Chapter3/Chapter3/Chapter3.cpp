@@ -11,7 +11,7 @@ int userInput() {											// Chapter 3.4 Use. User Integer Input
 	return x;
 }
 
-#define DEBUG_MOD											// Chapter 3.5 Use. If you want to disable debug mod, comment it out
+#define DEBUG_MODE											// Chapter 3.5 Use. If you want to disable debug mod, comment it out
 
 int main()
 {
@@ -85,7 +85,7 @@ int main()
 // Chapter 3.5: More debugging tactics
 // As we code, we might get annoyed that everytime when you run, you will see the std::cerr statement unless you deleted it
 // Well, we can do a debug mode by using directives, look at line 14 and below
-#ifdef DEBUG_MOD
+#ifdef DEBUG_MODE
 	std::cerr << "In main()\n";
 #endif 
 	std::cout << "My name is Kenneth\n";
@@ -98,7 +98,24 @@ int main()
 // If you are too lazy to make one like me, then just use the directives which seems better to me
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Chapter 3.6
+// Chapter 3.6: Using an integrated debugger: Stepping
+// Rather than entering code in the program, we can use the debug mode in the IDE. 
+// There are few keys to know: F11, F10, F11 + Alt (Only for VS Code)
+// step into command executes the next statement in the normal execution path of the program, 
+// and then pauses execution of the program so we can examine the program¡¯s state using the debugger. --> F11
+
+// The step over command executes the next statement in the normal execution path of the program. --> F10
+
+// Step out does not just execute the next line of code. 
+// Instead, it executes all remaining code in the function currently being executed, 
+// and then returns control to you when the function has returned. --> F11 + Alt
+
+// Try those shortkeys to test the code above
+// Detailed explaination in this site --> https://www.learncpp.com/cpp-tutorial/using-an-integrated-debugger-stepping/
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 3.6: Using an integrated debugger: Stepping
+
 	return 0;
 }
 
