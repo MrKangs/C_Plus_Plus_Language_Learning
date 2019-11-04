@@ -114,7 +114,14 @@ int main()
 // Detailed explaination in this site --> https://www.learncpp.com/cpp-tutorial/using-an-integrated-debugger-stepping/
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Chapter 3.6: Using an integrated debugger: Stepping
+// Chapter 3.7: Using an integrated debugger: Running and breakpoints
+// Check this website to find how to debug with breakpoints and other tactics
+// https://www.learncpp.com/cpp-tutorial/using-an-integrated-debugger-running-and-breakpoints/
+// If you already have experience of VS or VScoe or other text editor that you are familiar, then you can skip this entire chapter I would say
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 3.8:
+// https://www.learncpp.com/cpp-tutorial/using-an-integrated-debugger-watching-variables/
 
 	return 0;
 }
