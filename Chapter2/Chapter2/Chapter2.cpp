@@ -341,7 +341,7 @@ cout << "Hello World!" << '\n';				// It will run with no error
 #include "square.h"
 #include "geometry.h"
 
-// If you run this with removing the comments above, you will get an error
+// If you run this with removing the comments above, you will get an error (not any more since we add th following below)
 // because you basically called getSquareSide function twice (since geometry.h is basically calling square.h function )
 
 // As you see above, it is hard to tell whether you used the same function twice, therefore, we use a header guard to prevent this issue
@@ -357,8 +357,8 @@ cout << "Hello World!" << '\n';				// It will run with no error
 
 // So go back to the example we had before with a new file called square.cpp
 
-	std::cout << "a square has " << getSquareSides() << "sides\n";									// = 4
-	std::cout << "a square of length 5 has perimeter length " << getSquarePerimeter(5) << '\n';		// = 20
+	std::cout << "a square has " << getSquareSides() << " sides\n";									// = 4
+	std::cout << "a square of length 5 has perimeter length is " << getSquarePerimeter(5) << '\n';		// = 20
 // As you see, there is no error when you include geometry.h and sqaure.h files
 // header guard is only used in header files not in scoure files. Please take a look at sqaure.h to know the function of a header
 
