@@ -1,2 +1,6 @@
 ﻿  Chapter4.cpp
+D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(46,11): warning C4305: '=': truncation from 'int' to 'unsigned short'
+D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(46,6): warning C4309: '=': truncation of constant value
+D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(49,11): warning C4305: '=': truncation from 'int' to 'unsigned short'
+D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(49,6): warning C4309: '=': truncation of constant value
   Chapter4.vcxproj -> D:\C_Plus_Plus_Language_Learning\Chapter4\x64\Debug\Chapter4.exe

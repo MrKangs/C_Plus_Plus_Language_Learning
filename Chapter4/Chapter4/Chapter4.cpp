@@ -34,6 +34,39 @@ void sizeofOperator() {											//Use in Chapter 4.3: Object sizes and the siz
 	std::cout << "long double:\t" << sizeof(long double) << " bytes\n";
 }
 
+int integerdivsion(int x,int y) {								//Use in Chapter 4.4: Signed Integer
+	int z = x / y;
+	return z;
+}
+
+void unsignedshortinteger() {											//Use in Chapter 4.5: Unsigned Integer and Avoid it
+	unsigned short x = 65535; // largest 16-bit unsigned value possible
+	std::cout << "x was: " << x << '\n';
+
+	x = 65536; // 65536 is out of our range, so we get wrap-around
+	std::cout << "x is now: " << x << '\n';
+
+	x = 65537; // 65537 is out of our range, so we get wrap-around
+	std::cout << "x is now: " << x << '\n';	
+
+	std::cout << "Now when we do the opposite way of circluing around the following will be like this:" << '\n';
+
+	unsigned int y = 0; // smallest 2-byte unsigned value possible
+	std::cout << "y was: " << y << std::endl;
+
+	y = -1; // -1 is out of our range, so we get wrap-around
+	std::cout << "y is now: " << y << std::endl;
+
+	y = -2; // -2 is out of our range, so we get wrap-around
+	std::cout << "y is now: " << y << std::endl;
+
+	std::cout << "At last, simple operators doesn't work as normal: take a look at the following: " << '\n';
+
+	unsigned int a = 5;
+	unsigned int b = 3;
+	std::cout << "The difference of 5 and 3 should be 2 but we get " << a - b;
+}
+
 int main()
 {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -63,16 +96,31 @@ int main()
 // Chapter 4.3: Object sizes and the sizeof operator
 // The following function tells you how many bytes can hold for each data type
 	sizeofOperator(); //line 22
-// In the function, you will see sizeof statement. That statement tells you what is the size of the varable is in bytes.
+// In the function, you will see sizeof statement. That statement tells you what is the size of the varable is in bytes
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 4.4: Signed integers
-// 
+// By default, integers are signed, which means the number¡¯s sign is preserved
+// Therefore, a signed integer can hold both positive and negative numbers (and 0)
+// For more informaiton, check this website: https://www.learncpp.com/cpp-tutorial/signed-integers/
+// Let's take a look at the integerdivision function in line 37
+	std::cout << integerdivsion(5, 4) << '\n';
+// the result will be 1, but it is not 1 (it is 1.25)
+// when you return a value of int, it will only print the integer value which in this case is 1
+// if you want to print the "true" result, then we need to return the value in a different value
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 4.5: Unsigned integers and you should avoid them
+// Compare to signed integer, where the integer can hold negative, positive, and 0, unsigned integer can only hold positive number
+// Take a look at the chart from the website to know the range: https://www.learncpp.com/cpp-tutorial/unsigned-integers-and-why-to-avoid-them/
+// You will see that the range is double but only to one side; this can cause some issues
+// Let's take a look at unsignedshortinteger function in line 42
+	unsignedshortinteger();
+// As you see the results of the following, it is stange since we are not used to those stituations
+// We might use it for special program, but most of the integer, we use signed integer so don't confuse it
 
-
-
-
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 4.6: 
 
 
 
