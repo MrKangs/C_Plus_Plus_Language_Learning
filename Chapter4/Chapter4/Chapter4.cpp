@@ -64,7 +64,34 @@ void unsignedshortinteger() {											//Use in Chapter 4.5: Unsigned Integer a
 
 	unsigned int a = 5;
 	unsigned int b = 3;
-	std::cout << "The difference of 5 and 3 should be 2 but we get " << a - b;
+	std::cout << "The difference of 5 and 3 should be 2 but we get " << a - b << '\n';
+}
+
+#include <cstdint>												//Use in Chapter 4.6: Fixed-width integers and size_t
+
+int fixedint() {
+	std::int16_t i(5);
+	std::cout << i << '\n';
+	std::uint16_t j(65535);
+	std::cout << j << '\n';
+	return 0;
+}
+
+int fastandleast() {
+	std::cout << "fast 8: " << sizeof(std::int_fast8_t) * 8 << " bits\n";
+	std::cout << "fast 16: " << sizeof(std::int_fast16_t) * 8 << " bits\n";
+	std::cout << "fast 32: " << sizeof(std::int_fast32_t) * 8 << " bits\n";
+
+	std::cout << "least 8: " << sizeof(std::int_least8_t) * 8 << " bits\n";
+	std::cout << "least 16: " << sizeof(std::int_least16_t) * 8 << " bits\n";
+	std::cout << "least 32: " << sizeof(std::int_least32_t) * 8 << " bits\n";
+
+	return 0;
+}
+
+int size_tis() { //?
+	std::cout << sizeof(int);
+	return 0;
 }
 
 int main()
@@ -120,7 +147,26 @@ int main()
 // We might use it for special program, but most of the integer, we use signed integer so don't confuse it
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Chapter 4.6: 
+// Chapter 4.6: Fixed-width integers and size_t
+// Previous chapter, int is always 2 byte size memory holder
+// But fixed-width integers can change that to increase the integer range; it is stupid for now
+// To use it, we need to use the header in line 70
+// Let's take a look at the function fixedint() in line 72
+	fixedint();
+// As you see, we could do unsigned integer or signed integer, but the range will change which number you do
+// if we do int32_t, then that integer can hold a 32bit long integer  https://www.learncpp.com/cpp-tutorial/fixed-width-integers-and-size-t/ 
+
+// The fast type (std::int_fast#_t) provides the fastest signed integer type 
+// with a width of at least # bits (where # = 8, 16, 32, or 64). 
+// For example, std::int_fast32_t will give you the fastest signed integer type that¡¯s at least 32 bits.
+
+// The least type(std::int_least#_t) provides the smallest signed integer type 
+// with a width of at least # bits(where #  = 8, 16, 32, or 64).
+// For example, std::int_least32_t will give you the smallest signed integer type that¡¯s at least 32 bits.
+
+// Take a look at the fastandleast() in line 80
+	fastandleast();
+	size_tis();
 
 
 
