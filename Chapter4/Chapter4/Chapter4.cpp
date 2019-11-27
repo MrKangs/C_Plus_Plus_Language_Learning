@@ -90,7 +90,18 @@ int fastandleast() {
 }
 
 int size_tis() { //?
-	std::cout << sizeof(int);
+	std::cout << sizeof(int) <<'\n';
+	return 0;
+}
+
+int floatingpointis() {
+	std::cout << 5.0 <<'\n';
+	std::cout << 6.7 << '\n';
+	std::cout << 6.9f << '\n';
+	std::cout << 5.0f << '\n';
+	std::cout << 987654321.123456789<<'\n';
+	std::cout << 987654.3f << '\n';
+	std::cout << 9876543.2f << '\n';
 	return 0;
 }
 
@@ -167,6 +178,25 @@ int main()
 // Take a look at the fastandleast() in line 80
 	fastandleast();
 	size_tis();
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 4.7: Introduction to scientific notation 
+// https://www.learncpp.com/cpp-tutorial/introduction-to-scientific-notation/
+// Take a look at this website if you do not know what is scientific notation is
+// Most students should I have learn from high school math or chemistry
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 4.8: Floating point numbers
+// floaring point numbers are used to store numbers such as very long numbers or decimal numbers
+// Take a look at floatingpointis() in line 97
+	floatingpointis();
+// In line 99 and line 100 shows that there is two way to write a floating number
+// Adding the letter f (means floating) will make the number as floating
+// While line 98, even though we wrtie as 5.0, it will return as a interger; even we wrtie f in the end
+// Last, we see that long number will be written as a scientific notation
+// The maximun number length is 6
+
+
 
 
 
