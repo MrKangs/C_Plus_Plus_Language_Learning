@@ -1,17 +1,18 @@
 #include <iostream>
 
-void writeValue(int x) {										//Use in Chapter 4.2: Void 
+
+void writeValue(int x) {																				//Use in Chapter 4.2: Void 
 	std::cout << "The value of x is " << x << '\n';
 }
 
-int randomNumber1(void) {										//Use in Chapter 4.2: Void
+int randomNumber1(void) {																				//Use in Chapter 4.2: Void
 	int x;
 	std::cout << "Enter an integer: ";
 	std::cin >> x;
 	return x;
 }
 
-int randomNumber2() {											//Use in Chapter 4.2: Void
+int randomNumber2() {																					//Use in Chapter 4.2: Void
 	int x;
 	std::cout << "Enter an integer: ";
 	std::cin >> x;
@@ -19,7 +20,7 @@ int randomNumber2() {											//Use in Chapter 4.2: Void
 
 }
 
-void sizeofOperator() {											//Use in Chapter 4.3: Object sizes and the sizeof operator
+void sizeofOperator() {																					//Use in Chapter 4.3: Object sizes and the sizeof operator
 	std::cout << "bool:\t\t" << sizeof(bool) << " bytes\n";
 	std::cout << "char:\t\t" << sizeof(char) << " bytes\n";
 	std::cout << "wchar_t:\t" << sizeof(wchar_t) << " bytes\n";
@@ -34,12 +35,12 @@ void sizeofOperator() {											//Use in Chapter 4.3: Object sizes and the siz
 	std::cout << "long double:\t" << sizeof(long double) << " bytes\n";
 }
 
-int integerdivsion(int x,int y) {								//Use in Chapter 4.4: Signed Integer
+int integerDivsion(int x,int y) {																		//Use in Chapter 4.4: Signed Integer
 	int z = x / y;
 	return z;
 }
 
-void unsignedshortinteger() {											//Use in Chapter 4.5: Unsigned Integer and Avoid it
+void unsignedShortInteger() {																			//Use in Chapter 4.5: Unsigned Integer and Avoid it
 	unsigned short x = 65535; // largest 16-bit unsigned value possible
 	std::cout << "x was: " << x << '\n';
 
@@ -67,9 +68,9 @@ void unsignedshortinteger() {											//Use in Chapter 4.5: Unsigned Integer a
 	std::cout << "The difference of 5 and 3 should be 2 but we get " << a - b << '\n';
 }
 
-#include <cstdint>												//Use in Chapter 4.6: Fixed-width integers and size_t
+#include <cstdint>																						//Use in Chapter 4.6: Fixed-width integers and size_t
 
-int fixedint() {
+int fixedInt() {																						//Use in Chapter 4.6: Fixed-width integers and size_t
 	std::int16_t i(5);
 	std::cout << i << '\n';
 	std::uint16_t j(65535);
@@ -77,7 +78,7 @@ int fixedint() {
 	return 0;
 }
 
-int fastandleast() {
+int fastandLeast() {																					//Use in Chapter 4.6: Fixed-width integers and size_t
 	std::cout << "fast 8: " << sizeof(std::int_fast8_t) * 8 << " bits\n";
 	std::cout << "fast 16: " << sizeof(std::int_fast16_t) * 8 << " bits\n";
 	std::cout << "fast 32: " << sizeof(std::int_fast32_t) * 8 << " bits\n";
@@ -89,12 +90,12 @@ int fastandleast() {
 	return 0;
 }
 
-int size_tis() { //?
+int size_tis() { //?																					//Use in Chapter 4.6: Fixed-width integers and size_t
 	std::cout << sizeof(int) <<'\n';
 	return 0;
 }
 
-int floatingpointis() {
+int floatingPointis() {																					//Use in Chapter 4.8: Floating point Numbers
 	std::cout << 5.0 <<'\n';
 	std::cout << 6.7 << '\n';
 	std::cout << 6.9f << '\n';
@@ -105,6 +106,95 @@ int floatingpointis() {
 	return 0;
 }
 
+#include <iomanip>																						//Use in Chapter 4.8: Floating point Numbers floatvsdouble function
+
+int floatVSDouble() {																					//Use in Chapter 4.8: Floating point Numbers
+	std::cout << std::setprecision(16);					
+	std::cout << 3.3333333333333333333333f << '\n';
+	std::cout << 3.3333333333333333333333 << '\n';
+	float f{ 123456789.0f };
+	std::cout << std::setprecision(9);
+	std::cout << f << '\n';
+	return 0;
+}
+
+int roundingErrors() {																					//Use in Chapter 4.8: Floating point Numbers
+	double d{0.1};
+	std::cout << d << '\n';
+	std::cout << std::setprecision(17);
+	std::cout << d << '\n';
+
+	std::cout << std::setprecision(17);
+	double d1(1.0);
+	double d2(0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1); 
+	std::cout << d1 << std::endl;
+	std::cout << d2 << std::endl;
+	return 0;
+}
+
+int infinity() {																						//Use in Chapter 4.8: Floating point Numbers
+	double zero(0.0);
+	
+	double positive(5.0 / zero);
+	std::cout << positive << std::endl;
+
+	double negative(-5.0 / zero);
+	std::cout << negative << std::endl;
+
+	double indeterminate(zero / zero);
+	std::cout << indeterminate << std::endl;
+
+	return 0;
+}
+
+int booleanInWords() {																					//Use in Chapter 4.9: Boolean Value
+	std::cout << true << std::endl;
+	std::cout << false << std::endl;
+
+	std::cout << std::boolalpha;
+
+	std::cout << true << std::endl;
+	std::cout << false << std::endl;
+
+	std::cout << std::noboolalpha;
+
+	std::cout << true << std::endl;
+	std::cout << false << std::endl;
+
+	return 0;
+}
+
+int inputtingBoolean() {																				//Use in Chapter 4.9: Boolean Value
+	bool b{};
+	// std::cout << "Enter a boolean: "" << '\n'
+	// The above statement will not work because boolean only takes integer not strings
+	std::cout << "Enter an integer:" << '\n';
+	std::cin >> b;
+	std::cout << std::boolalpha;
+	std::cout << "You Entered: " << b << '\n';
+	return 0;
+}
+
+bool isEqual(int x, int y) {																			//Use in Chapter 4.9: Boolean Value
+	return (x == y);
+}
+
+int collectIntData() {
+	std::cout << "Enter an Integer: ";
+	int x{};
+	std::cin >> x;
+	return x;
+}
+
+int testingTwoInteger() {																				//Use in Chapter 4.9: Boolean Value
+	int x = collectIntData();
+	int y = collectIntData();
+
+	std::cout << std::boolalpha;
+	std::cout << x << " and " << y << " are equal?";
+	std::cout << isEqual(x, y);
+	return 0;
+}
 int main()
 {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -142,7 +232,7 @@ int main()
 // Therefore, a signed integer can hold both positive and negative numbers (and 0)
 // For more informaiton, check this website: https://www.learncpp.com/cpp-tutorial/signed-integers/
 // Let's take a look at the integerdivision function in line 37
-	std::cout << integerdivsion(5, 4) << '\n';
+	std::cout << integerDivsion(5, 4) << '\n';
 // the result will be 1, but it is not 1 (it is 1.25)
 // when you return a value of int, it will only print the integer value which in this case is 1
 // if you want to print the "true" result, then we need to return the value in a different value
@@ -153,7 +243,7 @@ int main()
 // Take a look at the chart from the website to know the range: https://www.learncpp.com/cpp-tutorial/unsigned-integers-and-why-to-avoid-them/
 // You will see that the range is double but only to one side; this can cause some issues
 // Let's take a look at unsignedshortinteger function in line 42
-	unsignedshortinteger();
+	unsignedShortInteger();
 // As you see the results of the following, it is stange since we are not used to those stituations
 // We might use it for special program, but most of the integer, we use signed integer so don't confuse it
 
@@ -163,7 +253,7 @@ int main()
 // But fixed-width integers can change that to increase the integer range; it is stupid for now
 // To use it, we need to use the header in line 70
 // Let's take a look at the function fixedint() in line 72
-	fixedint();
+	fixedInt();
 // As you see, we could do unsigned integer or signed integer, but the range will change which number you do
 // if we do int32_t, then that integer can hold a 32bit long integer  https://www.learncpp.com/cpp-tutorial/fixed-width-integers-and-size-t/ 
 
@@ -176,7 +266,7 @@ int main()
 // For example, std::int_least32_t will give you the smallest signed integer type that¡¯s at least 32 bits.
 
 // Take a look at the fastandleast() in line 80
-	fastandleast();
+	fastandLeast();
 	size_tis();
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -189,16 +279,54 @@ int main()
 // Chapter 4.8: Floating point numbers
 // floaring point numbers are used to store numbers such as very long numbers or decimal numbers
 // Take a look at floatingpointis() in line 97
-	floatingpointis();
+	floatingPointis();
 // In line 99 and line 100 shows that there is two way to write a floating number
 // Adding the letter f (means floating) will make the number as floating
 // While line 98, even though we wrtie as 5.0, it will return as a interger; even we wrtie f in the end
 // Last, we see that long number will be written as a scientific notation
 // The maximun number length is 6
+// Take a look at this function in line 111
+	floatVSDouble();
+// If you see the output, you will know that the float output will not be 3.333333333333...
+// The end digit numbers will not be 3's
+// Also, even we set up the float number as 123456789.0, it returns as 1234567892 which it is a huge error
+// Usually floats only holds 7 digit precision that can cause error
+// If you are dealing with a huge digit number, then use double rather than float
+// Let's see more example of float rounding errors: take a look the next function in line 121
+	roundingErrors();
+// The first two numbers show that setting a precision that float can't holds will make a difference
+// The last two numbers show that the two numbers should be equal but they are not
+// This will come into more depth in Chapter 5.6, but basic knowledge is that it transfer to float which creates a problem
+// Let's look a concept: infinity in line 135
+	infinity();
+// The return value will be the following: inf, -inf, nan(inf)
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 4.9: Boolean values
+// Initialzing a boolean will store the value as false, which it will be 0 not 1.
+	bool b1{};
+	std::cout << b1 << '\n';
+// ! means not or opposite
+// So if I do !true(1), it will be false(0), and !false(0) will be true(1)
+// If you want to print the actual word, look at the following function in line 150
+	booleanInWords();
 
+// You can't initialze a boolean as an integer, but if we set as the boolean all integer rather than 0, it will change to true
+// bool b2{4}; // Invalid Statement
+	bool b2 = 4;
+	std::cout << b2 << std::endl;
+	bool b3 = -4;
+	std::cout << b3 << std::endl;
+	bool b4 = 0;
+	std::cout << b4 << std::endl;
 
+// The boolean return value will be 1,1,0
 
+// Take a look at the following function in line 167
+	inputtingBoolean();
+
+// Then here is a program for comparing two integer that if they are the same or not in line 178 and 182
+	testingTwoInteger(); // There is an error behind: we will try to fix it!
 
 
 
