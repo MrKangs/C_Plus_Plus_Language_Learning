@@ -179,10 +179,11 @@ bool isEqual(int x, int y) {																			//Use in Chapter 4.9: Boolean Val
 	return (x == y);
 }
 
-int collectIntData() {
-	std::cout << "Enter an Integer: ";
+int collectIntData() {																					//Use in Chapter 4.9: Boolean Value &&
+	std::cout << "Enter an Integer: ";																	// Chapter 4.10: Introduction to If Statements
 	int x{};
 	std::cin >> x;
+	std::cout << '\n';
 	return x;
 }
 
@@ -191,8 +192,59 @@ int testingTwoInteger() {																				//Use in Chapter 4.9: Boolean Value
 	int y = collectIntData();
 
 	std::cout << std::boolalpha;
-	std::cout << x << " and " << y << " are equal?";
-	std::cout << isEqual(x, y);
+	std::cout << x << " and " << y << " are equal?: ";
+	std::cout << isEqual(x, y) << std::endl;
+	return 0;
+}
+
+int ifElseIfElseStatement() {																			//Use in Chapter 4.9: Boolean Value
+	int x = collectIntData();
+	if (x > 0)
+		std::cout << "The integer is positive" << std::endl;
+	else if (x < 0)
+		std::cout << "The integer is negative" << std::endl;
+	else
+		std::cout << "The integer is 0" << std::endl;
+	return 0;
+}
+
+bool isEqualWithIfStatements(int x, int y) {															//Use in Chapter 4.10: Introduction to If Statements
+	if (x == y) {
+		return true;
+	}
+	else
+		return false;
+}
+
+int testingTwoIntegerNew() {																			//Use in Chapter 4.10: Introduction to If Statements
+	int x = collectIntData();
+	int y = collectIntData();
+
+	bool b = isEqualWithIfStatements(x, y);
+	std::cout << std::boolalpha;
+	if (b == 1 || b == true)
+		std::cout << x << " and " << y << " are equal each other." << std::endl;
+	else if (b == 0 || b == false)
+		std::cout << x << " and " << y << " are not equal each other." << std::endl;
+	else
+		std::cout << "I don't know what happened, please try again." << std::endl;
+	return 0;
+}
+
+int chars() {																							//Use in Chapter 4.11: Chars
+	char c1{ 'a' };
+	char c2{ 97 }; // This is the same as c1; therefore, don't use this method
+	std::cout << c1 << " and " << c2 << " are the same" << '\n';
+	std::cout << 'c' << '\n';
+	return 0;
+}
+
+int charsToIntConvertion() {
+	char c1{97};
+	int x (c1);
+	std::cout << x << '\n';
+	std::cout << static_cast<int>(c1) << '\n';
+
 	return 0;
 }
 int main()
@@ -325,9 +377,34 @@ int main()
 // Take a look at the following function in line 167
 	inputtingBoolean();
 
-// Then here is a program for comparing two integer that if they are the same or not in line 178 and 182
-	testingTwoInteger(); // There is an error behind: we will try to fix it!
+// Then here is a program for comparing two integer that if they are the same or not in line 178, 182, and 190
+	testingTwoInteger();
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 4.10: Introduction of ifstatements
+// Let's take a simple if, else, and else if statement function in line 200
+	ifElseIfElseStatement();
+
+// Not only the if statements gives you the condition, it can also return a boolean value of true or false
+// Let's rewrite the testingTwoInteger() by calling testingTwoIntegerNew() in line 182, 211, 219 by adding conditional (if statements)
+	testingTwoIntegerNew();
+
+// There will be more lessons about If statement in Chapter 5.2
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 4.11: Chars
+// There are two ways to initialize char value: either with the actual result or the code of the value
+// Take a look at this website to see the code table: https://www.learncpp.com/cpp-tutorial/chars/
+// We don't recommend to use the code value because there is a simple way to do it
+// Take a look at chars() in line 234
+	chars();
+
+// Take a look function in line 242
+	charsToIntConvertion();
+// Some version will return as the following
+// static_cast<new_type>(expression)
+// But in my case, it returns as a fine 97 which it is strange. 
+// But the second statement, std::cout << static_cast<int>(c1) << '\n';, will return as 97 for any user.
 
 
 

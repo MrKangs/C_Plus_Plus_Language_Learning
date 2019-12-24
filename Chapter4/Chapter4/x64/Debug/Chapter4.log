@@ -3,6 +3,6 @@ D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(47,11): warning 
 D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(47,6): warning C4309: '=': truncation of constant value
 D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(50,11): warning C4305: '=': truncation from 'int' to 'unsigned short'
 D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(50,6): warning C4309: '=': truncation of constant value
-D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(316,13): warning C4305: 'initializing': truncation from 'int' to 'bool'
-D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(318,14): warning C4305: 'initializing': truncation from 'int' to 'bool'
+D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(368,13): warning C4305: 'initializing': truncation from 'int' to 'bool'
+D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(370,14): warning C4305: 'initializing': truncation from 'int' to 'bool'
   Chapter4.vcxproj -> D:\C_Plus_Plus_Language_Learning\Chapter4\x64\Debug\Chapter4.exe
