@@ -3,8 +3,8 @@
 #include "calculation.h"
 #include <iostream>
 
-int condition(int x, int y) {													// x = seconds, y = height, z = counter
-	int z = 0;		
+int condition(double x, double y) {												// x = seconds, y = height, z = counter
+	double z = 0.0;		
 	while (z <= x) {															// Loop for seconds: We have not learn it yet
 		if (calculation(z, y) > 0) {											// If the ball above the ground, give data
 			std::cout << "The Ball at " << z << " second, it is located "		// Printing out where the ball is
