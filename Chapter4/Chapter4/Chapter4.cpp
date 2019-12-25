@@ -239,7 +239,15 @@ int chars() {																							//Use in Chapter 4.11: Chars
 	return 0;
 }
 
-int charsToIntConvertion() {
+int codeGetter() {																						//Use in Chapter 4.11: Chars
+	char c{};
+	std::cout << "Input the Keyboard character: ";
+	std::cin >> c;
+	std::cout << c << " has a ASCII code " << static_cast<int>(c) << '\n';
+	return 0;
+}
+
+int charsToIntConvertion() {																			//Use in Chapter 4.11: Chars
 	char c1{97};
 	int x (c1);
 	std::cout << x << '\n';
@@ -399,57 +407,98 @@ int main()
 // Take a look at chars() in line 234
 	chars();
 
-// Take a look function in line 242
+// Without looking at the website, we can get information of the code for each character by using the following function in line 242
+	codeGetter();
+// If you enter mutiple char, it will only print/give the first value of the char code
+// However, if we add another std::cin >> c;, it will print the next value code
+	// If we know how to do loop and count how many the user inputted, that could be a fun small project to do
+
+// Take a look function in line 250
 	charsToIntConvertion();
 // Some version will return as the following
 // static_cast<new_type>(expression)
 // But in my case, it returns as a fine 97 which it is strange. 
 // But the second statement, std::cout << static_cast<int>(c1) << '\n';, will return as 97 for any user.
 
+// Over the course, you see a lot og '\n' statement for each sentence that says means std::endl;
+// There are more in a chart in the following website: https://www.learncpp.com/cpp-tutorial/chars/
+// Look where the person explains the concept of escape sequence
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 4.12: Literals
+// This chapter talks more in depth of Literals that explains how to define perfectly
+// The only useful information I would say in this chapter is that double is not the same as float 
+// In order to define a float, you must put a f in the end of the number. For example
+	double x1{ 3.5f };
+	double x2{ 3.5 };
+	std::cout << x1 << '\n' << x2 << '\n';
+// They will print out the same, but if you inside, you will see that x1 is define as float rather than double
+
+// https://www.learncpp.com/cpp-tutorial/literals/ This webside will give a table and information about this chapter 
+// If you don't know octal and hexa numbers, please read it because they are from CS 160 (The beginnner class)
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 4.13: Const, constexpr, and symbolic constants
+// const is constant which it will never change once you used the variable. For example,
+	const double G = 9.8; //gravity
+// Once you used the const, you can't change G the value such as G = 16.9. This will give an error
+// You can also uses as the parameter functionA( const int x) {} something like this...
+
+// constexpr is the same idea of constant but it must be defined once you complie the program
+	constexpr int integer{ 4 + 5 };
+// But you can't do like this: 
+//	std::cin >> age; 
+//	constepr int myAge {age};
+// Because we didn't define age after the program is complie
+// We can use constexpr as setting up the global variable in one sub program for the main program: It will be good 
 
 
-
-
-
-
-
-
+// TODO:Somehow I can't use IDE properly. 
 	
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 4 Quiz:
+// Let's do these programs for this chapter
+/*
+1. Write the following program: 
+The user is asked to enter 2 floating point numbers (use doubles). 
+The user is then asked to enter one of the following mathematical symbols: +, -, *, or /. 
+The program computes the answer on the two numbers the user entered and prints the results. 
+If the user enters an invalid symbol, the program should print nothing.
 
+Example of program:
 
+Enter a double value: 6.2
+Enter a double value: 5
+Enter one of the following: +, -, *, or /: *
+6.2 * 5 is 31
 
+The answer will be in the program called: simpleCalculator
 
+2. Write a short program to simulate a ball being dropped off of a tower. 
+To start, the user should be asked for the height of the tower in meters. 
+Assume normal gravity (9.8 m/s2), and that the ball has no initial velocity (the ball is not moving to start). 
+Have the program output the height of the ball above the ground after 0, 1, 2, 3, 4, and 5 seconds. 
+The ball should not go underneath the ground (height 0).
 
+Your program should include a header file named constants.h that contains a symbolic constant to hold the value of gravity (9.8).
 
+Use a function to calculate the height of the ball after x seconds. 
+The function can calculate how far the ball has fallen after x seconds using the following formula: 
+distance fallen = gravity_constant * x_seconds2 / 2
 
+Sample output:
 
+Enter the height of the tower in meters: 100
+At 0 seconds, the ball is at height: 100 meters
+At 1 seconds, the ball is at height: 95.1 meters
+At 2 seconds, the ball is at height: 80.4 meters
+At 3 seconds, the ball is at height: 55.9 meters
+At 4 seconds, the ball is at height: 21.6 meters
+At 5 seconds, the ball is on the ground.
 
+The answer will be in the program called: ballDrop
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 	return 0;
 }
