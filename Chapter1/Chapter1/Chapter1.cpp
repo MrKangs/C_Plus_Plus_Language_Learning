@@ -8,16 +8,18 @@ void doNothing(const int& x)
 {
 }
 int main() {
-	//------------------------------------------------------------------------------------------------------------------------------------------
-	//chpater 1.2: comments
+//------------------------------------------------------------------------------------------------------------------------------------------
+//chpater 1.2: comments
+	std::cout << "Chapter 1.2" << '\n';
 	std::cout << "Hello, world!\n";				// std:cout lives in the iostream library
 	std::cout << "It is nice to meet you!\n";	// these comments make the code hard to read
 	std::cout << "Yeah\n";						// especially when lines are different lengths
 												// therefore, use tab button to make them in line
 												/* or use these to comment a long paragraph
 												*/
-	//------------------------------------------------------------------------------------------------------------------------------------------
-	//chapter 1.3 ~ 1.4: variable assignments and initialization
+//------------------------------------------------------------------------------------------------------------------------------------------
+//chapter 1.3 ~ 1.4: variable assignments and initialization
+	std::cout << "Chapter 1.3 & Chapter 1.4" << '\n';
 
 	//int x;										// int x (same as java)
 	//int a, b;									// int a; and new line int b;
@@ -33,9 +35,9 @@ int main() {
 												   Interestingly, compare to other languages, the program will return as an error if we never
 												   use the variable in C++. You must need to use it (not just only defining it.)*/
 	
-	//------------------------------------------------------------------------------------------------------------------------------------------
-	// chapter 1.5: 	User input and output for iostream package
-
+//------------------------------------------------------------------------------------------------------------------------------------------
+// chapter 1.5: 	User input and output for iostream package
+	std::cout << "Chapter 1.5" << '\n';
 	// #include <iostream>--> iostream is a package for user input and output (io stands for input/output)
 
 	std::cout << "Hello World!\n";		// std::cout is a print statment on the console. 
@@ -79,8 +81,9 @@ int main() {
 		If we enter a huge number as 3 billion, we will get a random number
 	*/
 
-	//------------------------------------------------------------------------------------------------------------------------------------------
-	// chapter 1.6: Avoid uninitialized variable in programming 
+//------------------------------------------------------------------------------------------------------------------------------------------
+// chapter 1.6: Avoid uninitialized variable in programming 
+	std::cout << "Chapter 1.6" << '\n';
 	int x;
 	
 	doNothing(x);				// You will get an error that a is not uninitialized: it never got any data. Now add line 84
@@ -88,8 +91,9 @@ int main() {
 
 	std::cout << x; 
 
-	//------------------------------------------------------------------------------------------------------------------------------------------
-	// chapter 1.7: variable naming 
+//------------------------------------------------------------------------------------------------------------------------------------------
+// chapter 1.7: variable naming 
+	std::cout << "Chapter 1.7" << '\n';
 	/*
 
 	int value; // correct
@@ -112,16 +116,18 @@ int main() {
 	However, if it too long to explain what that means, then just use fricking comments
 	*/
 
-	//------------------------------------------------------------------------------------------------------------------------------------------
-	// chapter 1.8: literals and operators 
+//------------------------------------------------------------------------------------------------------------------------------------------
+// chapter 1.8: literals and operators 
+	std::cout << "Chapter 1.8" << '\n';
 	// int g = 5; Explaination: g is an constant while 5 is a literal 
 	// 2 + 6 = 8; Explaination: 2 and 6 are literals while + and = are operators.
 	// = are not the same as ==: = means is (or assigned as) while == means equal for comparison
 	// (<<) means insection, (>>) means extraction
 	// Go to this website for types of operators: https://www.learncpp.com/cpp-tutorial/introduction-to-literals-and-operators/
 
-	//------------------------------------------------------------------------------------------------------------------------------------------
-	// chapter 1.9: Statment Vs. Expression
+//------------------------------------------------------------------------------------------------------------------------------------------
+// chapter 1.9: Statment Vs. Expression
+	std::cout << "Chapter 1.9" << '\n';
 										// Statements are used when we want the program to perform an action. 
 										// Expressions are used when we want the program to calculate a value.
 	int g;								// this is an statement

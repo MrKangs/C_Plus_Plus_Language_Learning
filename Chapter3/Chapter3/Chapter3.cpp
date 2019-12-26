@@ -5,6 +5,7 @@ int getValue() {											// Chapter 3.4 Use. Basic return function
 }
 
 int userInput() {											// Chapter 3.4 Use. User Integer Input
+	std::cout << "User Input Function!" << '\n';
 	std::cout << "Enter a number:";
 	int x{ 0 };
 	std::cin >> x;
@@ -17,6 +18,7 @@ int main()
 {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 3.1: Syntax and Semantic error
+	std::cout << "Chapter 3.1" << '\n';
 // Syntax error will be something like this below
 	/*
 	std::cout < "Hi there"; << x; // invalid operator (<), extraneous semicolon, undeclared variable (x)
@@ -39,6 +41,7 @@ int main()
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 3.2: The debugging process
+	std::cout << "Chapter 3.2" << '\n';
 // The following is the 5 step of debugging the issue when the error is a semantic error
 // 1.Find the root cause of the problem (usually the line of code that¡¯s not working)
 // 2.Ensure you understand why the issue is occurring
@@ -49,10 +52,12 @@ int main()
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 3.3:Strategy for Debugging --> https://www.learncpp.com/cpp-tutorial/a-strategy-for-debugging/
+	std::cout << "Chapter 3.3" << '\n';
 // Please take a look of doing a great debugging method when you program
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 3.4: Basic debugging tactics
+	std::cout << "Chapter 3.4" << '\n';
 // There are 3 ways to use some basic debugging part
 // First tactic is commenting out a single function or statement: 
 		// If the program is not behaving incorrectly, it will be at least one of the statement.
@@ -83,6 +88,7 @@ int main()
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 3.5: More debugging tactics
+	std::cout << "Chapter 3.5" << '\n';
 // As we code, we might get annoyed that everytime when you run, you will see the std::cerr statement unless you deleted it
 // Well, we can do a debug mode by using directives, look at line 14 and below
 #ifdef DEBUG_MODE
@@ -99,6 +105,7 @@ int main()
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 3.6: Using an integrated debugger: Stepping
+	std::cout << "Chapter 3.6" << '\n';
 // Rather than entering code in the program, we can use the debug mode in the IDE. 
 // There are few keys to know: F11, F10, F11 + Alt (Only for VS Code)
 // step into command executes the next statement in the normal execution path of the program, 
@@ -115,12 +122,14 @@ int main()
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 3.7: Using an integrated debugger: Running and breakpoints
+	std::cout << "Chapter 3.7" << '\n';
 // Check this website to find how to debug with breakpoints and other tactics
 // https://www.learncpp.com/cpp-tutorial/using-an-integrated-debugger-running-and-breakpoints/
 // If you already have experience of VS or VScoe or other text editor that you are familiar, then you can skip this entire chapter I would say
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 3.8:
+	std::cout << "Chapter 3.8" << '\n';
 // https://www.learncpp.com/cpp-tutorial/using-an-integrated-debugger-watching-variables/
 
 	return 0;

@@ -22,6 +22,7 @@ int return5() {								// Chapter 2.2 Use. A small function that returns a value
 }
 
 int returnUserInputInteger() {				// Chapter 2.2 Use. Function that ask the user input in integer and return that value in the main()
+	std::cout << "Return User Input Integer Function!" << '\n';
 	std::cout << "Enter an Integer:";
 	int x{ 0 };
 	std::cin >> x;
@@ -64,6 +65,7 @@ int main()
 {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 2.1: Introduction of Functions
+	std::cout << "Chapter 2.1" << '\n';
 											// A function is a reusable sequence of statements designed to do a particular job
 											// User-defined function is small chucks of functions to make the program easy to manage
 											// All format of the function will be like this (expect the main function)
@@ -100,6 +102,7 @@ int main()
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 2.2: Function return Value
+	std::cout << "Chapter 2.2" << '\n';
 											// Compare to the last chapter, this chapter will use a different type of function
 											// What if a function needs to send a data to the main function?
 											// then we use the return function.
@@ -148,6 +151,7 @@ type return(){								// type can be any type such as string, int, char, etc.
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 2.3: Arguments and Parameters in Functions
+	std::cout << "Chapter 2.3" << '\n';
 
 	// A function parameter is a variable used in a function. Function parameters work almost identically to variables defined inside 
 	// the function, but with one difference: they are always initialized with a value provided by the caller of the function.
@@ -193,13 +197,14 @@ type return(){								// type can be any type such as string, int, char, etc.
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 2.4: Introduction to local scope
+	std::cout << "Chapter 2.4" << '\n';
 	// local scope is the same concept of local variable: it doesn't change the global variable.
 	// We already explain this concept in doubleTheNumberRenewVersion.cpp
 	// The main key is that don't get confused with the same name variable in different functions: make all the variable name different!
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 2.5: Why the heck we need to use functions?
-
+	std::cout << "Chapter 2.5" << '\n';
 	/* We might say that we can just write the whole thing in one big program called the main().
 	   But, actually writing them in small functions are easy to fix, modify, and lighter to use than that.
 	   Also, the program will run faster than having a huge long program(not sure in C++ but in other language yse it is)
@@ -207,7 +212,7 @@ type return(){								// type can be any type such as string, int, char, etc.
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 2.6: WhiteSpace in writing code.
-
+	std::cout << "Chapter 2.6" << '\n';
 	//std::cout << "Hello
 		//world!"; // Not allowed!
 
@@ -219,6 +224,7 @@ type return(){								// type can be any type such as string, int, char, etc.
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 2.7: Forward declarations
+	std::cout << "Chapter 2.7" << '\n';
 	// For every previous chapters, we always defined the function before the main function. 
 	// And look at my commit in the very top. It will tell you it won't work, but now it will
 	// How? we use the tool of forward declaration.
@@ -232,7 +238,7 @@ type return(){								// type can be any type such as string, int, char, etc.
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 2.8: Programs with multiple code files
-
+	std::cout << "Chapter 2.8" << '\n';
 // Look at this website how to add file in the same project: https://www.learncpp.com/cpp-tutorial/programs-with-multiple-code-files/
 // Adding file references are easy compare to other programming languages. 
 // It is the same as Forward declaration: just write the function name before the main function.
@@ -241,7 +247,7 @@ std::cout << "remander function/program results: " << remander(6, 4) << '\n';			
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 2.9: Naming conflicts and the std namespace
-
+	std::cout << "Chapter 2.9" << '\n';
 // If two identical identifiers are introduced into the same program in a way that the compiler or linker can¡¯t tell them apart, 
 // the compiler or linker will produce an error. This error is generally referred to as a naming collision (or naming conflict).
 
@@ -255,7 +261,7 @@ cout << "Hello World!" << '\n';				// It will run with no error
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 2.10: Introduction to the preprocessor --> Referenece: https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/
-
+	std::cout << "Chapter 2.10" << '\n';
 // The preprocessor is best thought of as a separate program that manipulates the text in each code file.
 
 // When the preprocessor runs, it scans through the code file(from top to bottom), looking for preprocessor directives.
@@ -324,6 +330,7 @@ cout << "Hello World!" << '\n';				// It will run with no error
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 2.11: Header files: https://www.learncpp.com/cpp-tutorial/header-files/
+	std::cout << "Chapter 2.11" << '\n';
 // It is annoying when you need to call every function from every different file. 
 // Therefore, we use a header to tell that we are using this entire program for this main function
 
@@ -334,6 +341,7 @@ cout << "Hello World!" << '\n';				// It will run with no error
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 2.12: Header guard
+	std::cout << "Chapter 2.12" << '\n';
 // In any programming language, you can't have two same function name at all. Also you should not define the same function twice
 // For example, I can't define foo() again since I already defined one. 
 // Now let's look an example at sqaure.h and geometry.h and main function file
@@ -367,14 +375,17 @@ cout << "Hello World!" << '\n';				// It will run with no error
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // chapter 2.13: making the first program ever: https://www.learncpp.com/cpp-tutorial/how-to-design-your-first-programs/
+	std::cout << "Chapter 2.13" << '\n';
 
 	return 0;
 }
 
 int division(int x, int y) {				// Chapter 2.7 Use. divide two number and gives the results as an integer, no decimal or remander
+	std::cout << "Division Function!" << '\n';
 	return x / y;
 }
 
 void foo() {
+	std::cout << "Foo Function!" << '\n';
 #define HELLO
 }
