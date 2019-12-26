@@ -85,6 +85,7 @@ int sameVersionOfWhyUsingNewConditionalStatement(bool inBigClassroom) {			// Use
 int main(){
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 5.1: Operator precedence and associativity
+	std::cout << "Chapter 5.1" << '\n';
 // Operators are like +,-,/, and *
 // There are more type of operators and runs by a certain order like how 4 + 6 /2 = 4 + (6/2) = 7
 // Take a look at the website as a table: https://www.learncpp.com/cpp-tutorial/operator-precedence-and-associativity/
@@ -93,6 +94,7 @@ int main(){
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 5.2: Arithmetic operators
+	std::cout << "Chapter 5.2" << '\n';
 // +x = x --> This is redundent that we don't use the Unary Plus sign
 // -x = -x
 
@@ -121,6 +123,7 @@ int main(){
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 5.3: Modulus and Exponentiation
+	std::cout << "Chapter 5.3" << '\n';
 // Let's take look more in depth of %
 // This operator only works with integers, not double. 
 // Take the following function in line 15
@@ -141,6 +144,7 @@ int main(){
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 5.4: Increment/decrement operators, and side effects
+	std::cout << "Chapter 5.4" << '\n';
 // If you look at the ballDrop Program, you might see this statement: ++x
 // This means add a value and use that new define x
 // ++x --> x = x + 1;
@@ -155,6 +159,7 @@ int main(){
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 5.5: Comma and conditional operators
+	std::cout << "Chapter 5.5" << '\n';
 // Comma only uses for loops (esp. for loops) these days, but there is more than that
 // We will not go over it because most of them can be done without using comma: it will make you confused
 // https://www.learncpp.com/cpp-tutorial/comma-and-conditional-operators/
@@ -174,6 +179,7 @@ int main(){
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 5.6: Relational operators and floating point comparisons
+	std::cout << "Chapter 5.6" << '\n';
 
 
 
