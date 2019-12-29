@@ -13,7 +13,7 @@ double collectNumber() {													// Collecting the Number Input from the Use
 int collectChar() {															// Collection the Char Input from the User
 	char c{};
 	std::cout << "Only Enter the following: +, -, * , /" << '\n';			// Make sure you give the warning to the User to enter the right Char
-	std::cout << "Enter whatmath you want?: ";
+	std::cout << "Enter what math you want?: ";
 	std::cin >> c;
 	std::cout << '\n';
 	return c;																// Because Char is only one int (code), so it can be int

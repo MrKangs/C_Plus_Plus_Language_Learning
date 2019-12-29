@@ -98,7 +98,7 @@ int fastandLeast() {																					//Use in Chapter 4.6: Fixed-width integ
 	return 0;
 }
 
-int size_tis() { //?																					//Use in Chapter 4.6: Fixed-width integers and size_t
+int size_tis() {																						//Use in Chapter 4.6: Fixed-width integers and size_t
 	std::cout << "Size_tis Function!" << '\n';
 	std::cout << sizeof(int) <<'\n';
 	return 0;

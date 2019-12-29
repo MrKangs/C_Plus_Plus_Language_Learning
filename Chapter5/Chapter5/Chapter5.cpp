@@ -82,6 +82,99 @@ int sameVersionOfWhyUsingNewConditionalStatement(bool inBigClassroom) {			// Use
 		return 20;
 }
 
+int comparison() {																// Use in Chapter 5.6: Relational operators and floating point comparisons
+	std::cout << "Comparison Function!";
+	std::cout << "Enter an integer: ";
+	int x{};
+	std::cin >> x;
+
+	std::cout << "Enter another integer: ";
+	int y{};
+	std::cin >> y;
+
+	if (x == y)
+		std::cout << x << " equals " << y << '\n';
+	if (x != y)
+		std::cout << x << " does not equal " << y << '\n';
+	if (x > y)
+		std::cout << x << " is greater than " << y << '\n';
+	if (x < y)
+		std::cout << x << " is less than " << y << '\n';
+	if (x >= y)
+		std::cout << x << " is greater than or equal to " << y << '\n';
+	if (x <= y)
+		std::cout << x << " is less than or equal to " << y << '\n';
+
+	return 0;
+}
+
+int floatNumberComparison() {													// Use in Chapter 5.6: Relational operators and floating point comparisons
+	std::cout << "Float Number Comparison Function!";
+	double d1{ 100.0 - 99.99 }; // should equal 0.01
+	double d2{ 10.0 - 9.99 }; // should equal 0.01
+
+	if (d1 == d2)
+		std::cout << "d1 == d2" << '\n';
+	else if (d1 > d2)
+		std::cout << "d1 > d2" << '\n';
+	else if (d1 < d2)
+		std::cout << "d1 < d2" << '\n';
+
+	return 0;
+}
+
+#include <cmath>
+#include <algorithm>
+
+bool approximatelyEqual(double a, double b, double epsilon)						// Use in Chapter 5.6: Relational operators and floating point comparisons		
+{
+	return (std::abs(a - b) 
+		<= (std::max(std::abs(a), std::abs(b)) * epsilon));
+}
+
+bool approximatelyEqualAbsRel(double a, double b,								// Use in Chapter 5.6: Relational operators and floating point comparisons
+	double absEpsilon, double relEpsilon)
+{
+	// Check if the numbers are really close 
+	// -- needed when comparing numbers near zero.
+	double diff{ std::abs(a - b) };
+	if (diff <= absEpsilon)
+		return true;
+
+	// Otherwise fall back to Knuth's algorithm
+	return (diff <= (std::max(std::abs(a), std::abs(b)) * relEpsilon));
+}
+
+int comparisonDoubleNumber() {													// Use in Chapter 5.6: Relational operators and floating point comparisons
+	std::cout << "Comparison Double Number Function!";
+	// a is really close to 1.0, but has rounding errors
+	double a{ 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 };
+
+	std::cout << approximatelyEqual(a, 1.0, 1e-8) << '\n';     
+	// compare "almost 1.0" to 1.0
+	std::cout << approximatelyEqual(a - 1.0, 0.0, 1e-8) << '\n'; 
+	// compare "almost 0.0" to 0.0
+	std::cout << approximatelyEqualAbsRel(a - 1.0, 0.0, 1e-12, 1e-8) << '\n'; 
+	// compare "almost 0.0" to 0.0
+	return 0;
+}
+
+int logicalOperators() {														// Use in Chapter 5.7: Logical Operators
+	std::cout << "Logical Operators Function!";
+	std::cout << "Enter a number: ";
+	int value{};
+	std::cin >> value;
+
+	if (value > 10 && value < 20)
+		std::cout << "Your value statisfy the and condition\n";
+	else if (value > 10 || value < 20)
+		std::cout << "Your value statisfy the or condition\n";
+	else
+		std::cout << "Your value doesn't statisfy any conditions\n";
+
+	return 0;
+}
+
 int main(){
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 5.1: Operator precedence and associativity
@@ -180,15 +273,40 @@ int main(){
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Chapter 5.6: Relational operators and floating point comparisons
 	std::cout << "Chapter 5.6" << '\n';
+// We have used these notations already, but take a look at this function in line 85
+	comparison();
+
+// Here is another reason why we should not use float often: Take a look the following function in line 111
+	floatNumberComparison();
+// The results show funny: even thought they are technically the same number, the computer returns as false
+// Key note is that we should not use == or != for float/double number
+// There is a function to say that they are the approximentaly the same: take a look at the following function in line 129, 135, and 148 
+	comparisonDoubleNumber();
+// The idea is complex that we don't need to understand fully: just to know that this the setup if you want to use a comparison of two double number
 
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 5.7: Logical Operators
+// There are three types of logical Operators
+// ! (not) if x is true, then false returns and vice versa : we used it a lot already so we already know what it is
+// || (or) if either a or be is true, then true: otherwise false
+// && (and) if a and b is true, then true: otherwise false
+// For different program user: there is one more called XOR which doesn't exsits: we need to make one by ourself
+// Let's take an example or the following function in line 162
 
+	logicalOperators();
 
+// De Morgan Law
+// !(x && y) == !x || !y
+// !(x || y) == !x && !y
 
+// The XOR operator will be the following statement
+// if (static_cast<bool>(a) != static_cast<bool>(b))
+// XOR condition works like this: If both false or true, then it is false: otherwise it is true
 
-
-
-
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Chapter 5.8: Bit flags and bit manipulation via std::bitset
+// 
 
 
 

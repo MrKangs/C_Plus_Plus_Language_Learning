@@ -1,8 +1,8 @@
 ﻿  Chapter4.cpp
-D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(47,11): warning C4305: '=': truncation from 'int' to 'unsigned short'
-D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(47,6): warning C4309: '=': truncation of constant value
-D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(50,11): warning C4305: '=': truncation from 'int' to 'unsigned short'
-D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(50,6): warning C4309: '=': truncation of constant value
-D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(376,13): warning C4305: 'initializing': truncation from 'int' to 'bool'
-D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(378,14): warning C4305: 'initializing': truncation from 'int' to 'bool'
+D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(53,11): warning C4305: '=': truncation from 'int' to 'unsigned short'
+D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(53,6): warning C4309: '=': truncation of constant value
+D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(56,11): warning C4305: '=': truncation from 'int' to 'unsigned short'
+D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(56,6): warning C4309: '=': truncation of constant value
+D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(408,13): warning C4305: 'initializing': truncation from 'int' to 'bool'
+D:\C_Plus_Plus_Language_Learning\Chapter4\Chapter4\Chapter4.cpp(410,14): warning C4305: 'initializing': truncation from 'int' to 'bool'
   Chapter4.vcxproj -> D:\C_Plus_Plus_Language_Learning\Chapter4\x64\Debug\Chapter4.exe
